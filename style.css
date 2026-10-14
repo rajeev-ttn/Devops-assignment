@@ -1,0 +1,278 @@
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+  --paper: #ffffff;
+  --wash: #f8fafc;
+  --blue: #2563eb;
+  --teal: #0f766e;
+  --violet: #6d28d9;
+  --amber: #b45309;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--wash);
+  line-height: 1.6;
+}
+
+.wrap {
+  width: min(1000px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(720px, calc(100% - 2rem));
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, #0f172a, #1d4ed8);
+  color: #fff;
+  z-index: 2;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #dbeafe;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.35), transparent 40%),
+    linear-gradient(135deg, #1d4ed8, #0f766e 70%);
+  color: #fff;
+  padding: 4rem 0 3.5rem;
+}
+
+.kicker {
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #ccfbf1;
+}
+
+.hero h1 {
+  margin: 0 0 0.8rem;
+  max-width: 16ch;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero-text {
+  max-width: 38rem;
+  margin: 0 0 1.4rem;
+  color: #e0f2fe;
+}
+
+.button {
+  display: inline-block;
+  background: #fbbf24;
+  color: #1f2937;
+  text-decoration: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f59e0b;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-soft {
+  background: #eff6ff;
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.intro {
+  margin-top: 0;
+  max-width: 42rem;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 1.2rem;
+  border-top: 5px solid var(--blue);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.card-teal { border-top-color: var(--teal); }
+.card-violet { border-top-color: var(--violet); }
+
+.card h3 {
+  margin: 0 0 0.35rem;
+}
+
+.card p,
+.section-soft p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+}
+
+.section-soft p:last-child {
+  margin-bottom: 0;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.stage {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  min-height: 140px;
+}
+
+.stage h3 {
+  margin: 0.45rem 0 0.25rem;
+}
+
+.stage p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.stage-index {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stage.running {
+  border-color: var(--blue);
+  background: #eff6ff;
+}
+
+.stage.running .stage-index {
+  background: var(--blue);
+  color: #fff;
+}
+
+.stage.done {
+  border-color: var(--teal);
+  background: #f0fdfa;
+}
+
+.stage.done .stage-index {
+  background: var(--teal);
+  color: #fff;
+}
+
+.demo-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.status {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.log {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1rem 0.9rem 2rem;
+  min-height: 7.5rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.log:empty {
+  display: none;
+}
+
+.site-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 1.1rem 0;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .cards,
+  .pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .header-row,
+  .demo-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

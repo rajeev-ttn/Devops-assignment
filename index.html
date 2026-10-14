@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Assignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top">DevOps Assignment</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#pipeline">CI/CD</a>
+        <a href="#demo">Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Static demo · HTML, CSS, JavaScript</p>
+        <h1>Ship a small change from code to a running app.</h1>
+        <p class="hero-text">
+          This page explains a CI/CD pipeline and lets you run a short demo of
+          the same steps: commit, test, build, and deploy.
+        </p>
+        <a class="button" href="#demo">Run the demo</a>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="wrap">
+        <h2>What this assignment shows</h2>
+        <p class="intro">
+          DevOps joins development and operations so software can be built,
+          tested, and released in a repeatable way. The ideas below are the
+          pieces most pipelines use.
+        </p>
+        <div class="cards">
+          <article class="card card-blue">
+            <h3>Source control</h3>
+            <p>Code lives in Git. A new commit is the starting point for the pipeline.</p>
+          </article>
+          <article class="card card-teal">
+            <h3>Automated checks</h3>
+            <p>Tests and a build run on every change, so broken code is caught early.</p>
+          </article>
+          <article class="card card-violet">
+            <h3>Release</h3>
+            <p>A successful build is packaged and deployed to an environment such as staging or production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section section-soft">
+      <div class="wrap narrow">
+        <h2>CI/CD pipeline</h2>
+        <p>
+          A CI/CD pipeline is the automated path from a code change to a running
+          application. <strong>CI</strong> means Continuous Integration.
+          <strong>CD</strong> means Continuous Delivery or Continuous Deployment.
+        </p>
+        <p>
+          In Continuous Integration, people merge code into a shared repository
+          often. Each change is built and tested automatically.
+        </p>
+        <p>
+          In Continuous Delivery, a change that passes those checks is ready to
+          release. In Continuous Deployment, that release is sent out
+          automatically.
+        </p>
+      </div>
+    </section>
+
+    <section id="demo" class="section">
+      <div class="wrap">
+        <h2>Simple pipeline demo</h2>
+        <p class="intro">Press the button to walk through four stages. Nothing is deployed; this only shows the flow.</p>
+
+        <div class="pipeline" id="pipeline">
+          <div class="stage" data-stage="commit">
+            <span class="stage-index">1</span>
+            <h3>Commit</h3>
+            <p>Save the change in Git.</p>
+          </div>
+          <div class="stage" data-stage="test">
+            <span class="stage-index">2</span>
+            <h3>Test</h3>
+            <p>Run the automated checks.</p>
+          </div>
+          <div class="stage" data-stage="build">
+            <span class="stage-index">3</span>
+            <h3>Build</h3>
+            <p>Package the application.</p>
+          </div>
+          <div class="stage" data-stage="deploy">
+            <span class="stage-index">4</span>
+            <h3>Deploy</h3>
+            <p>Release it to the environment.</p>
+          </div>
+        </div>
+
+        <div class="demo-actions">
+          <button class="button" id="runBtn" type="button">Run pipeline</button>
+          <p id="status" class="status" role="status">Waiting to run.</p>
+        </div>
+
+        <ol class="log" id="log" aria-live="polite"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>DevOps Assignment Demo · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
