@@ -24,10 +24,9 @@
         <p class="kicker">Static demo · HTML, CSS, JavaScript</p>
         <h1>Ship a small change from code to a running app.</h1>
         <p class="hero-text">
-          This page explains a CI/CD pipeline and lets you run a short demo of
-          the same steps: commit, test, build, and deploy.
+          This page explains a CI/CD pipeline and shows how this site is tested,
+          packaged, and published.
         </p>
-        <a class="button" href="#demo">Run the demo</a>
       </div>
     </section>
 
@@ -78,38 +77,31 @@
 
     <section id="demo" class="section">
       <div class="wrap">
-        <h2>Simple pipeline demo</h2>
-        <p class="intro">Press the button to walk through four stages. Nothing is deployed; this only shows the flow.</p>
+        <h2>Deployment steps</h2>
+        <p class="intro">Deployment check: this page now shows the live pipeline instead of a run button.</p>
 
         <div class="pipeline" id="pipeline">
-          <div class="stage" data-stage="commit">
+          <div class="stage done">
             <span class="stage-index">1</span>
-            <h3>Commit</h3>
-            <p>Save the change in Git.</p>
-          </div>
-          <div class="stage" data-stage="test">
-            <span class="stage-index">2</span>
             <h3>Test</h3>
-            <p>Run the automated checks.</p>
+            <p>GitHub Actions checks index.html, style.css, and app.js.</p>
           </div>
-          <div class="stage" data-stage="build">
-            <span class="stage-index">3</span>
+          <div class="stage done">
+            <span class="stage-index">2</span>
             <h3>Build</h3>
-            <p>Package the application.</p>
+            <p>The site files are packaged as website-package.zip.</p>
           </div>
-          <div class="stage" data-stage="deploy">
+          <div class="stage done">
+            <span class="stage-index">3</span>
+            <h3>S3</h3>
+            <p>The site is synced to the devops-assignment-test bucket.</p>
+          </div>
+          <div class="stage done">
             <span class="stage-index">4</span>
-            <h3>Deploy</h3>
-            <p>Release it to the environment.</p>
+            <h3>CloudFront</h3>
+            <p>The cache is invalidated so this update is served.</p>
           </div>
         </div>
-
-        <div class="demo-actions">
-          <button class="button" id="runBtn" type="button">Run pipeline</button>
-          <p id="status" class="status" role="status">Waiting to run.</p>
-        </div>
-
-        <ol class="log" id="log" aria-live="polite"></ol>
       </div>
     </section>
   </main>
